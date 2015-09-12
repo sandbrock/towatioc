@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToWatIoc.Container", "ToWatIoc.Container\ToWatIoc.Container.csproj", "{35F6F19F-9CBD-4584-88CB-3199EC909CDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToWatIoc.Container.Tests", "ToWatIoc.Container.Tests\ToWatIoc.Container.Tests.csproj", "{9BDA2B29-AD33-428E-91A5-7D5A047C4396}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToWatIoc.Mvc", "ToWatIoc.Mvc\ToWatIoc.Mvc.csproj", "{563BE3E3-73CB-444C-94A6-19BE995387DE}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35F6F19F-9CBD-4584-88CB-3199EC909CDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F6F19F-9CBD-4584-88CB-3199EC909CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F6F19F-9CBD-4584-88CB-3199EC909CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F6F19F-9CBD-4584-88CB-3199EC909CDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BDA2B29-AD33-428E-91A5-7D5A047C4396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BDA2B29-AD33-428E-91A5-7D5A047C4396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BDA2B29-AD33-428E-91A5-7D5A047C4396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BDA2B29-AD33-428E-91A5-7D5A047C4396}.Release|Any CPU.Build.0 = Release|Any CPU
+		{563BE3E3-73CB-444C-94A6-19BE995387DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{563BE3E3-73CB-444C-94A6-19BE995387DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{563BE3E3-73CB-444C-94A6-19BE995387DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{563BE3E3-73CB-444C-94A6-19BE995387DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
