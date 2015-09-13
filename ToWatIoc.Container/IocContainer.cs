@@ -92,9 +92,12 @@ namespace ToWatIoc.Container
                 throw new ArgumentException(string.Format("Expected lookup type of class, but received type of {0}", classType.ToString()));
             }
 
-            if (!_entries.ContainsKey(classType))
+            lock(_registerLock)
             {
-                _entries.TryAdd(classType, EntryFactory.GetEntry(lifestyleType, classType));
+                if (!_entries.ContainsKey(classType))
+                {
+                    _entries.TryAdd(classType, EntryFactory.GetEntry(lifestyleType, classType));
+                }
             }
         }
 
@@ -119,10 +122,15 @@ namespace ToWatIoc.Container
                 throw new ArgumentException(string.Format("Expected entry type of class, but received type of {0}", classType.ToString()));
             }
 
-            if (!_entries.ContainsKey(interfaceType))
+            lock(_registerLock)
             {
-                _entries.TryAdd(interfaceType, EntryFactory.GetEntry(lifestyleType, classType));
+                if (!_entries.ContainsKey(interfaceType))
+                {
+                    _entries.TryAdd(interfaceType, EntryFactory.GetEntry(lifestyleType, classType));
+                }
             }
         }
+
+        private object _registerLock = new object();
     }
 }

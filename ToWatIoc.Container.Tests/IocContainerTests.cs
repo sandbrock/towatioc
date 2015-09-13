@@ -14,19 +14,23 @@ namespace ToWatIoc.Container.Tests
         public void TestMultiThreading() 
         {
             var container = new IocContainer();
+            var tasks = new Task[20];
+            int taskIdx = 0;
 
-            for (int i = 0; i < 10; i++)
+            while (taskIdx < 20)
             {
-                Task.Run(() =>
-                    {
-                        container.Register<ConnectionName>();
-                    });
-                Task.Run(() =>
-                    {
-                        container.Register<ConnectionServer>();
-                    });
+                tasks[taskIdx++] = Task.Run(() =>
+                {
+                    container.Register<ConnectionName>();
+                });
+
+                tasks[taskIdx++] = Task.Run(() =>
+                {
+                    container.Register<ConnectionServer>();
+                });
             }
 
+            Task.WaitAll(tasks);
         }
 
         [Fact]
